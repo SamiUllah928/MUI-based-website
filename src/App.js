@@ -7,6 +7,8 @@ import Home from './Component/Home/Home'
 import Footer from './Component/Footer/Footer'
 import Header from './Component/Home/Header'
 import Cart from './Component/Cart/Cart'
+import TitlebarImageList from './Component/AboutUs/About'
+import UnstyledSelectObjectValuesForm from './Component/Menu/Menu'
 
 export default function App() {
   return (
@@ -15,6 +17,8 @@ export default function App() {
       <Header/>
       <Routes>
       <Route path='/' element={<Home/>}/>
+      <Route path='/menu' element={<UnstyledSelectObjectValuesForm/>}/>
+      <Route path='/about' element={<TitlebarImageList/>}/>
       <Route path='/cart' element={<Cart/>}/>
         <Route path='/signup' element={<Signup/>}/>
         <Route path='/login' element={<Login/>}/>

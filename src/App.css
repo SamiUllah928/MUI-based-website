@@ -90,9 +90,9 @@
 .pick1 {
     position: relative;
 }
-
+/* 
 .cont {
-    /* margin-top: 90px; */
+    margin-top: 90px;
     position: absolute;
     top: 87%;
     left: 66%;
@@ -112,7 +112,7 @@
     cursor: pointer;
     transition: 1s;
     font-weight: 700;
-}
+} */
 
 
 
@@ -172,6 +172,11 @@
     align-items: center;
     gap: 30px;
 
+}
+#well{
+  font-size: 20px;
+  text-align: left;
+  color: brown;
 }
 
 
@@ -254,4 +259,7 @@
   }
   #black{
     color: black;
+  }
+  .google{
+    margin-top: 20px;
   }

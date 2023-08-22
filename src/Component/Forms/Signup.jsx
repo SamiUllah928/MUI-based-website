@@ -4,7 +4,7 @@ import React from 'react'
 export default function Signup() {
   return (
     <div className='Signup'>
-      <div className="sign-up">
+    <div className="sign-up">
       <h1>Signup:</h1>
         <TextField id="outlined-password-input" label="Name" type="text"  autoComplete=""> </TextField>
         <TextField id="outlined-password-input" label="Email" type="email"  autoComplete=""> </TextField>
