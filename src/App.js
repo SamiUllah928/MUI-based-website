@@ -9,6 +9,7 @@ import Header from './Component/Home/Header'
 import Cart from './Component/Cart/Cart'
 import TitlebarImageList from './Component/AboutUs/About'
 import UnstyledSelectObjectValuesForm from './Component/Menu/Menu'
+import Dashboard from './Dashboard'
 
 export default function App() {
   return (
@@ -17,6 +18,7 @@ export default function App() {
       <Header/>
       <Routes>
       <Route path='/' element={<Home/>}/>
+      <Route path='/Dashboard' element={<Dashboard/>}/>
       <Route path='/menu' element={<UnstyledSelectObjectValuesForm/>}/>
       <Route path='/about' element={<TitlebarImageList/>}/>
       <Route path='/cart' element={<Cart/>}/>

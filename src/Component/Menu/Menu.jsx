@@ -23,7 +23,7 @@ export default function UnstyledSelectObjectValuesForm() {
   };
 
   return (
-    <div style={{margin:'30px', alignItems: 'center'}}>
+    <div style={{margin:'30px'}}>
       <form onSubmit={handleSubmit}>
         <Box sx={{ display: 'flex', alignItems: 'flex-end' }}>
           <div>
