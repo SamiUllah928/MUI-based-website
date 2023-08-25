@@ -4,9 +4,12 @@ import ImageListItem from '@mui/material/ImageListItem';
 import ImageListItemBar from '@mui/material/ImageListItemBar';
 import { ListSubheader } from '@mui/material';
 
+
 export default function Cart() {
     
   return (
+
+
     <ImageList sx={{ width: 1280, height: 500 ,  }}>
       {itemData.map((item) => (
         <ImageListItem key={item.img}>
@@ -25,6 +28,7 @@ export default function Cart() {
         </ImageListItem>
       ))}
     </ImageList>
+  
   );
 }
 

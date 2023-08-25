@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './App.css'
 import Signup from './Component/Forms/Signup'
 import Login from './Component/Forms/Login'
@@ -10,10 +10,19 @@ import Cart from './Component/Cart/Cart'
 import TitlebarImageList from './Component/AboutUs/About'
 import UnstyledSelectObjectValuesForm from './Component/Menu/Menu'
 import Dashboard from './Dashboard'
+import { setaxiostoken } from './Redux/setaxiostoken'
+import { loaduser } from './Redux/Action/authAction'
+import { useDispatch } from 'react-redux'
 
 export default function App() {
+  setaxiostoken(localStorage.token)
+  const dispatch = useDispatch()
+  useEffect(()=>{
+    dispatch(loaduser())
+  },[])
   return (
     <div className='App'>
+      
       <BrowserRouter>
       <Header/>
       <Routes>

@@ -52,8 +52,8 @@ console.log(username,email,password)
     <div className='Signup'>
       <div className="sign-up">
         <h1>Signup:</h1>
-        <p style={{visibility: success ? 'visible' : 'hidden'}}>Success{success}</p>
-        <p style={{visibility: err ? 'visible' : 'hidden'}}>Error{err}</p>
+        <p style={{visibility: success==={} ? 'visible' : 'hidden'}}>Success{success}</p>
+        <p style={{visibility: err ==={} ? 'visible' : 'hidden'}}>Error{err}</p>
         <TextField id="outlined-password-input" label="Name" type="text" autoComplete="" onChange={(e) => setusername(e.target.value)}> </TextField>
         <TextField id="outlined-password-input" label="Email" type="email" autoComplete="" onChange={(e) => setemail(e.target.value)}> </TextField>
         <TextField id="outlined-password-input" label="Password" type="password" autoComplete="" onChange={(e) => setpassword(e.target.value)}> </TextField>

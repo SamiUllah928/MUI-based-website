@@ -1,10 +1,12 @@
-import { User_Loading_Attempt, User_Loading_False, User_Loading_True, User_Login, User_Logout } from '../Types'
+import { Load_User, User_Loading_Attempt, User_Loading_False, User_Loading_True, User_Login, User_Logout } from '../Types'
 
 
 const initialState = {
     isAuthenticated: false,
     user: {},
-    loading: false
+    loading: false,
+    err:{},
+    success:{}
 }
 
 const authReducer = (state = initialState, action) => {
@@ -27,6 +29,12 @@ const authReducer = (state = initialState, action) => {
             }
         case User_Login:
             return {
+                ...state,
+                isAuthenticated: true,
+                user: action.payload
+            }
+        case Load_User:
+            return{
                 ...state,
                 isAuthenticated: true,
                 user: action.payload

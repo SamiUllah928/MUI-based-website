@@ -111,10 +111,10 @@ export default function Home() {
                         <h1 id='black'>For more Updates</h1>
 
                         <ul>
-                            <li><i class="fa-brands fa-facebook"></i> Facebook</li>
-                            <li> <i class="fa-brands fa-instagram"></i> Instagram</li>
-                            <li> <i class="fa-brands fa-twitter"></i> Twitter</li>
-                            <li> <i class="fa-brands fa-linkedin"></i> Linkedin</li>
+                            <li><i className="fa-brands fa-facebook"></i> Facebook</li>
+                            <li> <i className="fa-brands fa-instagram"></i> Instagram</li>
+                            <li> <i className="fa-brands fa-twitter"></i> Twitter</li>
+                            <li> <i className="fa-brands fa-linkedin"></i> Linkedin</li>
                         </ul>
                         <div className='google'>
                             <Button variant="outlined" onClick={handleClickOpen}>
