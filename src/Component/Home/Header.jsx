@@ -1,11 +1,14 @@
 import React from 'react'
-import { Button, } from '@mui/material'
+import { Avatar, Button, } from '@mui/material'
 import { useNavigate } from 'react-router-dom'
 import Box from '@mui/material/Box';
 import { ClickAwayListener } from '@mui/base/ClickAwayListener';
+import { useSelector } from 'react-redux';
 
 export default function Header() {
     const [open, setOpen] = React.useState(false);
+    const auth = useSelector(state=>state.Auth.isAuthenticated)
+    console.log(auth)
 
     const handleClick = () => {
         setOpen((prev) => !prev);
@@ -74,10 +77,15 @@ export default function Header() {
 
                         </ul>
                     </div>
-                    <div className="btn">
+                    <div className="btn" style={{display:auth ? 'none' :'flex'}}>
                         <Button variant='contained' color="error" size='medium' onClick={handleSignup}>Signup</Button>
                         <Button variant='contained' color="success" size='medium' onClick={handleLogin}>Login</Button>
                     </div>
+                    <div className="btn" style={{display:!auth ? 'none' :'flex'}}>
+                        <Avatar/>
+                        <Button variant='contained' color="success" size='medium' onClick={()=>navigate('/Dashboard')}>Dashboard</Button>
+                    </div>
+
                 </div>
             </div>
 

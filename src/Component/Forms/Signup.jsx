@@ -13,8 +13,8 @@ export default function Signup() {
   let navigate = useNavigate()
   let dispatch = useDispatch()
 
-//   const  message= useSelector(state => state.Auth.success ? state.Auth.success?.message : state.Auth.error?.message)
-// console.log(message)
+  const  message= useSelector(state => state.Auth.success ? state.Auth.success?.message : state.Auth.error?.message)
+console.log(message)
   let data=useSelector(state=>state.Auth)
   console.log(data)
 

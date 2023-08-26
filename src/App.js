@@ -13,6 +13,7 @@ import Dashboard from './Dashboard'
 import { setaxiostoken } from './Redux/setaxiostoken'
 import { loaduser } from './Redux/Action/authAction'
 import { useDispatch } from 'react-redux'
+import { ChangePassword } from './Component/Forms/ChangePassword'
 
 export default function App() {
   setaxiostoken(localStorage.token)
@@ -31,6 +32,7 @@ export default function App() {
       <Route path='/menu' element={<UnstyledSelectObjectValuesForm/>}/>
       <Route path='/about' element={<TitlebarImageList/>}/>
       <Route path='/cart' element={<Cart/>}/>
+        <Route path='/Change-Password' element={<ChangePassword/>}/>
         <Route path='/signup' element={<Signup/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/footer' element={<Footer/>}/>

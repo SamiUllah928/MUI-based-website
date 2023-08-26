@@ -65,3 +65,19 @@ export let loaduser =()=> async (dispatch)=>{
         
     }
 }
+// Change Password Function
+export let changepassword =(option)=> async (dispatch)=>{
+
+    try {
+        dispatch({type:User_Loading_Attempt})
+        let mylog=await axios.post('http://localhost:5000/user/passwordchange',option)
+        console.log(mylog)
+        dispatch({type:User_Loading_True})
+
+
+    } catch (error) {
+      console.log(error)
+        dispatch({type:User_Loading_False,payload:error.response.data})
+        
+    }
+}

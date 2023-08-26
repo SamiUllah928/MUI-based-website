@@ -3,6 +3,7 @@ import React, { useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
 import {  logout } from './Redux/Action/authAction'
+import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 
 export default function Dashboard() {
     let navigate=useNavigate()
@@ -10,6 +11,9 @@ export default function Dashboard() {
 
     let hadleLogoutdash=()=>{
      dispatch(logout())
+    }
+    const handleChange=()=>{
+        navigate('/Change-Password')
     }
 
     let data=useSelector(state=>state.Auth)
@@ -33,7 +37,8 @@ export default function Dashboard() {
             <p><b>Balance: </b>{data?.user?.balance}</p>
             <p><b>Password: </b>{data?.user?.password}</p>
             <p><b>Createdat: </b>{data?.user?.createdat}</p>
-            <Button variant='contained' onClick={hadleLogoutdash}>Logout</Button>
+            <Button variant='contained' onClick={hadleLogoutdash} sx={{mb:2,mt:2}}>Logout</Button>
+            <Button variant='contained' onClick={handleChange} endIcon={<ArrowForwardIcon/>}>Change Password</Button>
         </div>
     )
 }
