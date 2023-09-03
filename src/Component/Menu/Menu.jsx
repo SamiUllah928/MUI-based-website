@@ -5,7 +5,7 @@ import { Select, selectClasses } from '@mui/base/Select';
 import { Option, optionClasses } from '@mui/base/Option';
 import { Popper } from '@mui/base/Popper';
 import { styled } from '@mui/system';
-import Box from '@mui/system/Box';
+import {Box} from '@mui/material'
 
 export default function UnstyledSelectObjectValuesForm() {
   const getSerializedValue = (option) => {

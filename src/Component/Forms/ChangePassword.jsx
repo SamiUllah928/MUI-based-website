@@ -1,6 +1,5 @@
-import { Alert, Button, Typography } from '@mui/material'
+import { Alert, Button, Typography,Box } from '@mui/material'
 import { TextField } from '@mui/material'
-import { Box } from '@mui/system'
 import React, { useEffect, useState } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { changepassword } from '../../Redux/Action/authAction'

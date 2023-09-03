@@ -4,10 +4,15 @@ import { useNavigate } from 'react-router-dom'
 import Box from '@mui/material/Box';
 import { ClickAwayListener } from '@mui/base/ClickAwayListener';
 import { useSelector } from 'react-redux';
+// 
+import Menu from '@mui/material/Menu';
+import MenuItem from '@mui/material/MenuItem';
+import PopupState, { bindTrigger, bindMenu } from 'material-ui-popup-state';
+// 
 
 export default function Header() {
     const [open, setOpen] = React.useState(false);
-    const auth = useSelector(state=>state.Auth.isAuthenticated)
+    const auth = useSelector(state => state.Auth.isAuthenticated)
     console.log(auth)
 
     const handleClick = () => {
@@ -61,11 +66,11 @@ export default function Header() {
                             <ClickAwayListener onClickAway={handleClickAway}>
                                 <Box sx={{ position: 'relative' }}>
                                     <Button type="button" onClick={handleClick} >
-                                     creative
+                                        Creative
                                     </Button>
                                     {open ? (
                                         <Box sx={styles}>
-                                        Creative Agency 
+                                           Offers branding, design, marketing, advertising, PR and other digital marketing services for businesses big and small
                                         </Box>
                                     ) : null}
                                 </Box>
@@ -77,13 +82,31 @@ export default function Header() {
 
                         </ul>
                     </div>
-                    <div className="btn" style={{display:auth ? 'none' :'flex'}}>
+                    <div className="btn" style={{ display: auth ? 'none' : 'flex' }}>
                         <Button variant='contained' color="error" size='medium' onClick={handleSignup}>Signup</Button>
                         <Button variant='contained' color="success" size='medium' onClick={handleLogin}>Login</Button>
                     </div>
-                    <div className="btn" style={{display:!auth ? 'none' :'flex'}}>
-                        <Avatar/>
-                        <Button variant='contained' color="success" size='medium' onClick={()=>navigate('/Dashboard')}>Dashboard</Button>
+                    <div className="btn" style={{ display: !auth ? 'none' : 'flex' }}>
+                        {/* <Avatar/> */}
+
+                        <Button variant='contained' color="success" size='medium' onClick={() => navigate('/Dashboard')}>Dashboard</Button>
+                        {/*  */}
+                        <PopupState variant="popover" popupId="demo-popup-menu">
+                            {(popupState) => (
+                                <React.Fragment>
+                                    <Button  {...bindTrigger(popupState)}>
+                                        <Avatar alt="Sami Ullah" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSvJ1ang5CTSdBhvvhN39AMLza7rsPgFdkjhqsincW-XQ&s"/>
+
+                                    </Button>
+                                    <Menu {...bindMenu(popupState)}>
+                                        <MenuItem onClick={popupState.close}>Profile</MenuItem>
+                                        <MenuItem onClick={popupState.close}>My account</MenuItem>
+                                        <MenuItem onClick={popupState.close}>Logout</MenuItem>
+                                       
+                                    </Menu>
+                                </React.Fragment>
+                            )}
+                        </PopupState>
                     </div>
 
                 </div>

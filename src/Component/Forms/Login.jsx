@@ -3,6 +3,7 @@ import React, { useEffect, useState } from 'react'
 import { useNavigate } from 'react-router-dom'
 import { useDispatch, useSelector } from 'react-redux'
 import { login } from '../../Redux/Action/authAction'
+import axios from 'axios'
 
 export default function Login() {
     let [email,setemail]=useState()
@@ -18,8 +19,10 @@ export default function Login() {
     console.log(data)
 
 
-    let handleLoginbtn=()=>{
+    let handleLoginbtn=async()=>{
         dispatch(login(option))
+        
+
     }
 
 

@@ -14,6 +14,7 @@ import { setaxiostoken } from './Redux/setaxiostoken'
 import { loaduser } from './Redux/Action/authAction'
 import { useDispatch } from 'react-redux'
 import { ChangePassword } from './Component/Forms/ChangePassword'
+import AdCategory from './Component/Forms/AdCategory'
 
 export default function App() {
   setaxiostoken(localStorage.token)
@@ -36,6 +37,7 @@ export default function App() {
         <Route path='/signup' element={<Signup/>}/>
         <Route path='/login' element={<Login/>}/>
         <Route path='/footer' element={<Footer/>}/>
+        <Route path='/addcategory' element={<AdCategory/>}/>
       </Routes>
       </BrowserRouter>
      {/* <Variable/>

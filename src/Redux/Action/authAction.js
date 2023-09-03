@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { Load_User, User_Loading_Attempt, User_Loading_False, User_Loading_True, User_Login, User_Logout, User_Password_Change } from '../Types'
+import { Add_Category, Load_User, User_Loading_Attempt, User_Loading_False, User_Loading_True, User_Login, User_Logout, User_Password_Change } from '../Types'
 
 
 // Login Function
@@ -76,15 +76,33 @@ export let changepassword = (option) => async (dispatch) => {
         dispatch({ type: User_Loading_Attempt })
         let mylog = await axios.post('http://localhost:5000/user/passwordchange', option)
         console.log(mylog)
-        dispatch({type:User_Password_Change,payload:mylog.data})
+        dispatch({ type: User_Password_Change, payload: mylog.data })
         dispatch({ type: User_Loading_True })
 
 
     } catch (error) {
         console.log(error)
-        dispatch({type:User_Password_Change,payload:error.response.data})
-
+        // error
+        dispatch({ type: User_Password_Change, payload: error.response.data })
+        // error
         dispatch({ type: User_Loading_False, payload: error.response.data })
+
+    }
+}
+
+// Category Controller
+export let addcategory = (option) => async (dispatch) => {
+
+    try {
+        dispatch({ type: User_Loading_Attempt })
+        let mylog = await axios.post('http://localhost:5000/catagery/addcatagery', option)
+        console.log(mylog)
+        dispatch({ type: User_Login, payload: mylog.data.data })
+        dispatch({type:Add_Category})
+        dispatch({ type: User_Loading_True })
+
+    } catch (error) {
+        dispatch({ type: User_Loading_False })
 
     }
 }
