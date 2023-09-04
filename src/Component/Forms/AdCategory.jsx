@@ -1,19 +1,21 @@
-import React, { useEffect, useState } from 'react'
+import React, { useState } from 'react'
 import { Button, Typography, Box, Input } from '@mui/material'
 import { TextField } from '@mui/material'
 import { useDispatch, useSelector } from 'react-redux'
 import { addcategory } from '../../Redux/Action/authAction'
-import { useNavigate } from 'react-router-dom'
+// import { useNavigate } from 'react-router-dom'
 import { ref, getDownloadURL, uploadBytesResumable } from 'firebase/storage'
 import { Storage } from '../../firebase'
 
 export default function AdCategory() {
     let [cate, setcate] = useState()
-    let [loading, setloading] = useState(false)
-    const [prog, setprog] = useState()
     let [adde, setadde] = useState()
     const dispatch = useDispatch()
-    const navigate = useNavigate()
+    // const navigate = useNavigate()
+     
+    let [loading, setloading] = useState(false)
+    const [prog, setprog] = useState()
+  
     let data = useSelector(state => state.Auth)
     console.log(data)
 
@@ -54,9 +56,7 @@ export default function AdCategory() {
         <div className='AdCategory'>
             <Box sx={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'space-around', gap: '15px', }}>
                 <Typography variant='h5' sx={{ marginTop: '30px' }}>Add Category:</Typography>
-                <TextField type='text' placeholder='Name' onChange={(e) => setcate(e.target.value)}>
-
-                </TextField>
+                <TextField type='text' placeholder='Name' onChange={(e) => setcate(e.target.value)}></TextField>
                 <Input id='upload' type='file' onChange={(e) => handleUpload(e.target.files[0])} />
                 <Button disabled={loading ? true : false} variant='contained' onClick={handleAddCategory}>{loading ? `Progress ${prog}%` : "Add Category"}</Button>
             </Box>
