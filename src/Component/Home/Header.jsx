@@ -59,13 +59,13 @@ export default function Header() {
             <div className="main">
                 <div className="head">
                     <div className="logo">
-                        <h1>Cre@tive </h1>
+                        <h1 id='create'>Cre@tive </h1>
                     </div>
                     <div className="links">
                         <ul>
                             <ClickAwayListener onClickAway={handleClickAway}>
                                 <Box sx={{ position: 'relative' }}>
-                                    <Button type="button" onClick={handleClick} >
+                                    <Button id='cre' type="button" variant='contained' size='small' onClick={handleClick} >
                                         Creative
                                     </Button>
                                     {open ? (
@@ -89,7 +89,7 @@ export default function Header() {
                     <div className="btn" style={{ display: !auth ? 'none' : 'flex' }}>
                         {/* <Avatar/> */}
 
-                        <Button variant='contained' color="success" size='medium' onClick={() => navigate('/Dashboard')}>Dashboard</Button>
+                        <Button variant='contained' id='btndash' color="success" size='medium' onClick={() => navigate('/Dashboard')}>Dashboard</Button>
                         {/*  */}
                         <PopupState variant="popover" popupId="demo-popup-menu">
                             {(popupState) => (
